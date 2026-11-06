@@ -26,6 +26,11 @@ function usePageMeta(title, description) {
       meta.setAttribute("content", description);
     }
 
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) {
+      canonical.setAttribute("href", `${window.location.origin}${window.location.pathname}`);
+    }
+
     return () => {
       document.title = previousTitle;
       if (meta && !createdMeta && previousDescription !== null) {
