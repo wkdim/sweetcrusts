@@ -437,7 +437,7 @@ button {
 }
 .pillars-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));
   gap: 2.25rem;
 }
 .pillar-item {
@@ -510,7 +510,7 @@ button {
 }
 .specials-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
   gap: 2rem;
 }
 .special-card {
@@ -775,7 +775,7 @@ button {
 }
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(290px, 100%), 1fr));
   gap: 2rem;
 }
 .product-card {
@@ -1620,7 +1620,7 @@ button {
 }
 .builder-options-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
   gap: 0.75rem;
 }
 .builder-option-btn {
@@ -1941,7 +1941,7 @@ button {
 }
 .pillars-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
   gap: 2rem;
 }
 .about-pillar-card {
@@ -2032,7 +2032,7 @@ button {
 }
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
   gap: 2rem;
 }
 .team-card {
@@ -2105,7 +2105,7 @@ button {
 }
 .press-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(310px, 100%), 1fr));
   gap: 2rem;
 }
 .press-card {
@@ -2266,7 +2266,7 @@ button {
 }
 .gallery-items-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr));
   gap: 2.25rem;
 }
 .gallery-item-card {
@@ -3189,4 +3189,37 @@ button {
 }
 .photo-credits-list a {
   text-decoration: underline;
+}
+
+
+/* Small screens: let grid columns and long text shrink instead of overflowing */
+.contact-layout-grid > *,
+.contact-info-col,
+.info-card {
+  min-width: 0;
+}
+.channel-link,
+.address-line {
+  overflow-wrap: anywhere;
+}
+.hours-row {
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+}
+@media (max-width: 480px) {
+  .info-card {
+    padding: 1.35rem;
+  }
+}
+.form-row-two > *,
+.form-field {
+  min-width: 0;
+}
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
